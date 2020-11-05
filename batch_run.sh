@@ -26,14 +26,14 @@ source $ownroot
 
 echo
 
-$build_dir/QnAnalysisCorrect/QnAnalysisCorrect -i list.txt -t hades_analysis_tree --yaml-config-file=/lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades-analysis-config.yml --yaml-config-name=hades_analysis -n -1 --cuts-macro Hades/AuAu1.23.C --event-cuts hades/auau/1.23/event_cuts/standard/pt2
+$build_dir/QnAnalysisCorrect/QnAnalysisCorrect -i list.txt -t hades_analysis_tree --yaml-config-file=/lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades-analysis-config-mult.yml --yaml-config-name=hades_analysis -n -1 --cuts-macro Hades/AuAu1.23.C --event-cuts hades/auau/1.23/event_cuts/standard/pt2
 mv correction_out.root correction_in.root
 
-$build_dir/QnAnalysisCorrect/QnAnalysisCorrect -i list.txt -t hades_analysis_tree --yaml-config-file=/lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades-analysis-config.yml --yaml-config-name=hades_analysis -n -1 --cuts-macro Hades/AuAu1.23.C --event-cuts hades/auau/1.23/event_cuts/standard/pt2
+$build_dir/QnAnalysisCorrect/QnAnalysisCorrect -i list.txt -t hades_analysis_tree --yaml-config-file=/lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades-analysis-config-mult.yml --yaml-config-name=hades_analysis -n -1 --cuts-macro Hades/AuAu1.23.C --event-cuts hades/auau/1.23/event_cuts/standard/pt2
 mv correction_out.root correction_in.root
 
-$build_dir/QnAnalysisCorrect/QnAnalysisCorrect -i list.txt -t hades_analysis_tree --yaml-config-file=/lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades-analysis-config.yml --yaml-config-name=hades_analysis -n -1 --cuts-macro Hades/AuAu1.23.C --event-cuts hades/auau/1.23/event_cuts/standard/pt2
+$build_dir/QnAnalysisCorrect/QnAnalysisCorrect -i list.txt -t hades_analysis_tree --yaml-config-file=/lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades-analysis-config-mult.yml --yaml-config-name=hades_analysis -n -1 --cuts-macro Hades/AuAu1.23.C --event-cuts hades/auau/1.23/event_cuts/standard/pt2
 
-$build_dir/QnAnalysisCorrelate/QnAnalysisCorrelate --configuration-file /lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/correlation/hades.yml --configuration-name _tasks --input-file correction_out.root --input-tree=tree --output-file correlation_out.root
+$build_dir/QnAnalysisCorrelate/QnAnalysisCorrelate --configuration-file /lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/correlation/hades-mult.yml --configuration-name _tasks --input-file correction_out.root --input-tree=tree --output-file correlation_out.root
 
 echo JOB FINISHED!
