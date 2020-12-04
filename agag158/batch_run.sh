@@ -26,13 +26,13 @@ source $ownroot
 
 echo
 
-$build_dir/QnAnalysisCorrect/QnAnalysisCorrect -i list.txt -t hades_analysis_tree --yaml-config-file=/lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/correction-agag-158.yml --yaml-config-name=hades_analysis --cuts-macro Hades/AuAu1.23.C --event-cuts hades/auau/1.23/event_cuts/standard/szymon
-mv correction_out.root correction_in.root
-
-$build_dir/QnAnalysisCorrect/QnAnalysisCorrect -i list.txt -t hades_analysis_tree --yaml-config-file=/lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/correction-agag-158.yml --yaml-config-name=hades_analysis --cuts-macro Hades/AuAu1.23.C --event-cuts hades/auau/1.23/event_cuts/standard/szymon
-mv correction_out.root correction_in.root
-
-$build_dir/QnAnalysisCorrect/QnAnalysisCorrect -i list.txt -t hades_analysis_tree --yaml-config-file=/lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/correction-agag-158.yml --yaml-config-name=hades_analysis --cuts-macro Hades/AuAu1.23.C --event-cuts hades/auau/1.23/event_cuts/standard/szymon
+#$build_dir/QnAnalysisCorrect/QnAnalysisCorrect -i list.txt -t hades_analysis_tree --yaml-config-file=/lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/correction-agag-158.yml --yaml-config-name=hades_analysis --cuts-macro Hades/AuAu1.23.C --event-cuts hades/auau/1.23/event_cuts/standard/szymon
+#mv correction_out.root correction_in.root
+#
+#$build_dir/QnAnalysisCorrect/QnAnalysisCorrect -i list.txt -t hades_analysis_tree --yaml-config-file=/lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/correction-agag-158.yml --yaml-config-name=hades_analysis --cuts-macro Hades/AuAu1.23.C --event-cuts hades/auau/1.23/event_cuts/standard/szymon
+#mv correction_out.root correction_in.root
+#
+#$build_dir/QnAnalysisCorrect/QnAnalysisCorrect -i list.txt -t hades_analysis_tree --yaml-config-file=/lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/correction-agag-158.yml --yaml-config-name=hades_analysis --cuts-macro Hades/AuAu1.23.C --event-cuts hades/auau/1.23/event_cuts/standard/szymon
 
 $build_dir/QnAnalysisCorrelate/QnAnalysisCorrelate --configuration-file /lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/correlation-agag-158.yml --configuration-name _tasks --input-file correction_out.root --input-tree=tree --output-file correlation_out.root
 
