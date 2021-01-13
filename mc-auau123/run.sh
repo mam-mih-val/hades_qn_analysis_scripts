@@ -10,8 +10,8 @@ partition=main
 time=8:00:00
 build_dir=/lustre/nyx/hades/user/mmamaev/QnAnalysis/build/src
 
-lists_dir=${output_dir}/lists
-log_dir=${output_dir}/log
+lists_dir=${output_dir}/lists/
+log_dir=${output_dir}/log/
 
 mkdir -p $output_dir
 mkdir -p $log_dir
