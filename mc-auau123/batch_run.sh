@@ -26,18 +26,23 @@ source $ownroot
 
 echo
 
-/lustre/nyx/hades/user/mmamaev/hades_rapidity/build/src/rapidity -i list.txt -t hades_analysis_tree -o rapidity.root --output-tree-name hades_analysis_tree_extra -n -1 --tracks-branch mdc_vtx_tracks --out-branch mdc_vtx_tracks_rapidity --config-directory /lustre/nyx/hades/user/mmamaev/hades_rapidity/efficiency_files
+/lustre/nyx/hades/user/mmamaev/hades_rapidity/build/src/rapidity -i list.txt -t hades_analysis_tree -o reco.root --output-tree-name extra_reco -n -1 --tracks-branch mdc_vtx_tracks --out-branch mdc_vtx_tracks_rapidity --config-directory /lustre/nyx/hades/user/mmamaev/hades_rapidity/efficiency_files
+
+/lustre/nyx/hades/user/mmamaev/hades_rapidity/build/src/rapidity -i list.txt -t hades_analysis_tree -o sim.root --output-tree-name extra_sim -n -1 --tracks-branch sim_tracks --out-branch sim_tracks_rapidity --config-directory /lustre/nyx/hades/user/mmamaev/hades_rapidity/efficiency_files
 
 current_dir=`pwd`
-find $current_dir -name "*.root" > rapidity.txt
+find $current_dir -name "reco.root" > reco.txt
 
-$build_dir/QnAnalysisCorrect/QnAnalysisCorrect -i list.txt rapidity.txt -t hades_analysis_tree hades_analysis_tree_extra --yaml-config-file=/lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/mc-correction-auau-123.yml --yaml-config-name=hades_analysis -n -1 --cuts-macro Hades/AuAu1.23.C
+current_dir=`pwd`
+find $current_dir -name "sim.root" > sim.txt
+
+$build_dir/QnAnalysisCorrect/QnAnalysisCorrect -i list.txt reco.txt sim.txt -t hades_analysis_tree extra_reco extra_sim --yaml-config-file=/lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/mc-correction-auau-123.yml --yaml-config-name=hades_analysis -n -1 --cuts-macro Hades/AuAu1.23.C
 mv correction_out.root correction_in.root
 
-$build_dir/QnAnalysisCorrect/QnAnalysisCorrect -i list.txt rapidity.txt -t hades_analysis_tree hades_analysis_tree_extra --yaml-config-file=/lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/mc-correction-auau-123.yml --yaml-config-name=hades_analysis -n -1 --cuts-macro Hades/AuAu1.23.C
+$build_dir/QnAnalysisCorrect/QnAnalysisCorrect -i list.txt reco.txt sim.txt -t hades_analysis_tree extra_reco extra_sim --yaml-config-file=/lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/mc-correction-auau-123.yml --yaml-config-name=hades_analysis -n -1 --cuts-macro Hades/AuAu1.23.C
 mv correction_out.root correction_in.root
 
-$build_dir/QnAnalysisCorrect/QnAnalysisCorrect -i list.txt rapidity.txt -t hades_analysis_tree hades_analysis_tree_extra --yaml-config-file=/lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/mc-correction-auau-123.yml --yaml-config-name=hades_analysis -n -1 --cuts-macro Hades/AuAu1.23.C
+$build_dir/QnAnalysisCorrect/QnAnalysisCorrect -i list.txt reco.txt sim.txt -t hades_analysis_tree extra_reco extra_sim --yaml-config-file=/lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/mc-correction-auau-123.yml --yaml-config-name=hades_analysis -n -1 --cuts-macro Hades/AuAu1.23.C
 
 $build_dir/QnAnalysisCorrelate/QnAnalysisCorrelate --configuration-file /lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/mc-correlation.yml --configuration-name _tasks --input-file correction_out.root --input-tree=tree --output-file correlation_out.root
 
