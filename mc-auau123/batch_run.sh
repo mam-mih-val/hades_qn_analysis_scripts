@@ -36,13 +36,13 @@ find $current_dir -name "reco.root" > reco.txt
 current_dir=`pwd`
 find $current_dir -name "sim.root" > sim.txt
 
-$build_dir/QnAnalysisCorrect/QnAnalysisCorrect -i list.txt reco.txt sim.txt -t hades_analysis_tree extra_reco extra_sim --yaml-config-file=/lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/mc-correction-auau-123.yml --yaml-config-name=hades_analysis -n -1 --cuts-macro Hades/AuAu1.23.C
-mv correction_out.root correction_in.root
-
-$build_dir/QnAnalysisCorrect/QnAnalysisCorrect -i list.txt reco.txt sim.txt -t hades_analysis_tree extra_reco extra_sim --yaml-config-file=/lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/mc-correction-auau-123.yml --yaml-config-name=hades_analysis -n -1 --cuts-macro Hades/AuAu1.23.C
-mv correction_out.root correction_in.root
-
-$build_dir/QnAnalysisCorrect/QnAnalysisCorrect -i list.txt reco.txt sim.txt -t hades_analysis_tree extra_reco extra_sim --yaml-config-file=/lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/mc-correction-auau-123.yml --yaml-config-name=hades_analysis -n -1 --cuts-macro Hades/AuAu1.23.C
+#$build_dir/QnAnalysisCorrect/QnAnalysisCorrect -i list.txt reco.txt sim.txt -t hades_analysis_tree extra_reco extra_sim --yaml-config-file=/lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/mc-correction-auau-123.yml --yaml-config-name=hades_analysis -n -1 --cuts-macro Hades/AuAu1.23.C
+#mv correction_out.root correction_in.root
+#
+#$build_dir/QnAnalysisCorrect/QnAnalysisCorrect -i list.txt reco.txt sim.txt -t hades_analysis_tree extra_reco extra_sim --yaml-config-file=/lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/mc-correction-auau-123.yml --yaml-config-name=hades_analysis -n -1 --cuts-macro Hades/AuAu1.23.C
+#mv correction_out.root correction_in.root
+#
+#$build_dir/QnAnalysisCorrect/QnAnalysisCorrect -i list.txt reco.txt sim.txt -t hades_analysis_tree extra_reco extra_sim --yaml-config-file=/lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/mc-correction-auau-123.yml --yaml-config-name=hades_analysis -n -1 --cuts-macro Hades/AuAu1.23.C
 
 $build_dir/QnAnalysisCorrelate/QnAnalysisCorrelate --configuration-file /lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/mc-correlation.yml --configuration-name _tasks --input-file correction_out.root --input-tree=tree --output-file correlation_out.root
 
