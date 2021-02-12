@@ -17,7 +17,7 @@ mkdir -p $output_dir
 mkdir -p $log_dir
 mkdir -p $lists_dir
 
-split -l 1 -d -a 3 --additional-suffix=.list "$file_list" $lists_dir
+split -l 10 -d -a 3 --additional-suffix=.list "$file_list" $lists_dir
 
 n_runs=$(ls $lists_dir/*.list | wc -l)
 
@@ -30,4 +30,4 @@ echo lists_dir=$lists_dir
 echo n_runs=$n_runs
 echo job_range=$job_range
 
-sbatch -J QnAnalysis -p $partition -t $time -a $job_range -e ${log_dir}/%A_%a.e -o ${log_dir}/%A_%a.o --export=output_dir=$output_dir,file_list=$file_list,ownroot=$ownroot,lists_dir=$lists_dir,build_dir=$build_dir -- /cvmfs/vae.gsi.de/debian8/containers/debian8-user_container_20210204T1151.sif /lustre/nyx/hades/user/mmamaev/hades_qn_analysis_scripts/mc-auau123/batch_run.sh
+sbatch -J QnAnalysis -p $partition -t $time -a $job_range -e ${log_dir}/%A_%a.e -o ${log_dir}/%A_%a.o --export=output_dir=$output_dir,file_list=$file_list,ownroot=$ownroot,lists_dir=$lists_dir,build_dir=$build_dir -- /cvmfs/vae.gsi.de/debian8/containers/debian8-user_container_20210211T1503.sif /lustre/nyx/hades/user/mmamaev/hades_qn_analysis_scripts/mc-auau123/batch_run.sh
