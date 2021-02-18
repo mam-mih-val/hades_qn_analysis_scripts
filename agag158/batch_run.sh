@@ -26,18 +26,18 @@ source $ownroot
 
 echo
 
-/lustre/nyx/hades/user/mmamaev/hades_rapidity/build/src/rapidity -i list.txt -t hades_analysis_tree -o rapidity.root --output-tree-name hades_analysis_tree_extra -n -1 --tracks-branch mdc_vtx_tracks --out-branch mdc_vtx_tracks_rapidity --config-directory /lustre/nyx/hades/user/mmamaev/hades_rapidity/efficiency_files
-
-current_dir=`pwd`
-find $current_dir -name "*.root" > rapidity.txt
-
-$build_dir/QnAnalysisCorrect/QnAnalysisCorrect -i list.txt rapidity.txt -t hades_analysis_tree hades_analysis_tree_extra --yaml-config-file=/lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/correction-agag-158.yml --yaml-config-name=hades_analysis --cuts-macro Hades/AgAg1.58.C --event-cuts hades/agag/1.58/event_cuts/standard
-mv correction_out.root correction_in.root
-
-$build_dir/QnAnalysisCorrect/QnAnalysisCorrect -i list.txt rapidity.txt -t hades_analysis_tree hades_analysis_tree_extra --yaml-config-file=/lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/correction-agag-158.yml --yaml-config-name=hades_analysis --cuts-macro Hades/AgAg1.58.C --event-cuts hades/agag/1.58/event_cuts/standard
-mv correction_out.root correction_in.root
-
-$build_dir/QnAnalysisCorrect/QnAnalysisCorrect -i list.txt rapidity.txt -t hades_analysis_tree hades_analysis_tree_extra --yaml-config-file=/lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/correction-agag-158.yml --yaml-config-name=hades_analysis --cuts-macro Hades/AgAg1.58.C --event-cuts hades/agag/1.58/event_cuts/standard
+#/lustre/nyx/hades/user/mmamaev/hades_rapidity/build/src/rapidity -i list.txt -t hades_analysis_tree -o rapidity.root --output-tree-name hades_analysis_tree_extra -n -1 --tracks-branch mdc_vtx_tracks --out-branch mdc_vtx_tracks_rapidity --config-directory /lustre/nyx/hades/user/mmamaev/hades_rapidity/efficiency_files
+#
+#current_dir=`pwd`
+#find $current_dir -name "*.root" > rapidity.txt
+#
+#$build_dir/QnAnalysisCorrect/QnAnalysisCorrect -i list.txt rapidity.txt -t hades_analysis_tree hades_analysis_tree_extra --yaml-config-file=/lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/correction-agag-158.yml --yaml-config-name=hades_analysis --cuts-macro Hades/AgAg1.58.C --event-cuts hades/agag/1.58/event_cuts/standard
+#mv correction_out.root correction_in.root
+#
+#$build_dir/QnAnalysisCorrect/QnAnalysisCorrect -i list.txt rapidity.txt -t hades_analysis_tree hades_analysis_tree_extra --yaml-config-file=/lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/correction-agag-158.yml --yaml-config-name=hades_analysis --cuts-macro Hades/AgAg1.58.C --event-cuts hades/agag/1.58/event_cuts/standard
+#mv correction_out.root correction_in.root
+#
+#$build_dir/QnAnalysisCorrect/QnAnalysisCorrect -i list.txt rapidity.txt -t hades_analysis_tree hades_analysis_tree_extra --yaml-config-file=/lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/correction-agag-158.yml --yaml-config-name=hades_analysis --cuts-macro Hades/AgAg1.58.C --event-cuts hades/agag/1.58/event_cuts/standard
 
 $build_dir/QnAnalysisCorrelate/QnAnalysisCorrelate --configuration-file /lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/correlation-agag-158.yml --configuration-name _tasks --input-file correction_out.root --input-tree=tree --output-file correlation_out.root
 
