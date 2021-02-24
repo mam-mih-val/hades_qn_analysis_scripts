@@ -13,7 +13,7 @@ mkdir -p $job_num
 cd $job_num
 
 while read line; do
-    echo $line >> list.txt
+  echo $line >> list.txt
 done < $filelist
 echo >> list.txt
 
