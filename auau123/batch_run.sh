@@ -21,12 +21,14 @@ source /etc/profile.d/modules.sh
 module use /cvmfs/it.gsi.de/modulefiles/
 module load compiler/gcc/9
 
+echo "loading /lustre/nyx/hades/user/mmamaev/install/root-6.18.04/bin/thisroot.sh"
+source /lustre/nyx/hades/user/mmamaev/install/root-6.18.04/bin/thisroot.sh
+
+/lustre/nyx/hades/user/mmamaev/hades_rapidity/build/src/rapidity -i list.txt -t hades_analysis_tree -o rapidity.root --output-tree-name hades_analysis_tree_extra -n -1 --tracks-branch mdc_vtx_tracks --out-branch mdc_vtx_tracks_rapidity --efficiency-file=/lustre/nyx/hades/user/mmamaev/hades_rapidity/efficiency_files/efficiency_protons_botvina.root
+
 echo "loading " $ownroot
 source $ownroot
 
-echo
-
-/lustre/nyx/hades/user/mmamaev/hades_rapidity/build/src/rapidity -i list.txt -t hades_analysis_tree -o rapidity.root --output-tree-name hades_analysis_tree_extra -n -1 --tracks-branch mdc_vtx_tracks --out-branch mdc_vtx_tracks_rapidity --efficiency-file=/lustre/nyx/hades/user/mmamaev/hades_rapidity/efficiency_files/efficiency_protons_botvina.root
 
 current_dir=`pwd`
 find $current_dir -name "*.root" > rapidity.txt
