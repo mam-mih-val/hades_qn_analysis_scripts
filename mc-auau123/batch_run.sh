@@ -27,8 +27,8 @@ source /etc/profile.d/modules.sh
 module use /cvmfs/it.gsi.de/modulefiles/
 module load compiler/gcc/9
 
-echo "loading /lustre/nyx/hades/user/mmamaev/install/root-6.18.04/bin/thisroot.sh"
-source /lustre/nyx/hades/user/mmamaev/install/root-6.18.04/bin/thisroot.sh
+echo "loading /lustre/nyx/hades/user/mmamaev/install/root-6.18.04/cxx17/bin/thisroot.sh"
+source /lustre/nyx/hades/user/mmamaev/install/root-6.18.04/cxx17/bin/thisroot.sh
 
 echo
 
