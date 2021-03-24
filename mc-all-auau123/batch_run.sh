@@ -21,12 +21,15 @@ source /etc/profile.d/modules.sh
 module use /cvmfs/it.gsi.de/modulefiles/
 module load compiler/gcc/9
 
-echo "loading " $ownroot
-source $ownroot
+echo "loading /lustre/nyx/hades/user/mmamaev/install/root-6.18.04/cxx17/bin/thisroot.sh"
+source /lustre/nyx/hades/user/mmamaev/install/root-6.18.04/cxx17/bin/thisroot.sh
 
 echo
 
 /lustre/nyx/hades/user/mmamaev/hades_preprocessing/build/src/pre_process -i list.txt -t hades_analysis_tree -o reco.root --output-tree-name extra_reco -n -1 --efficiency-file=/lustre/nyx/hades/user/mmamaev/hades_rapidity/efficiency_files/efficiency_protons_auau123.root
+
+echo "loading " $ownroot
+source $ownroot
 
 current_dir=`pwd`
 find $current_dir -name "*.root" > rapidity.txt
