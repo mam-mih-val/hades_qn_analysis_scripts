@@ -31,6 +31,9 @@ echo
 current_dir=`pwd`
 find $current_dir -name "*.root" > rapidity.txt
 
+echo "loading /lustre/nyx/hades/user/mmamaev/install/root-6.20.04/bin/thisroot.sh"
+source /lustre/nyx/hades/user/mmamaev/install/root-6.20.04/bin/thisroot.sh
+
 $build_dir/QnAnalysisCorrect/QnAnalysisCorrect -i list.txt rapidity.txt -t hades_analysis_tree extra_reco --yaml-config-file=/lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/correction-auau-123-all.yml --yaml-config-name=hades_analysis -n -1 --cuts-macro Hades/AuAu1.23.C --event-cuts hades/auau/1.23/event_cuts/standard/pt3
 mv correction_out.root correction_in.root
 
