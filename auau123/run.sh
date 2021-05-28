@@ -6,8 +6,8 @@ output_dir=$2
 ownroot=/lustre/nyx/hades/user/mmamaev/install/root-6.20.04/bin/thisroot.sh
 
 current_dir=$(pwd)
-partition=main
-time=8:00:00
+partition=long
+time=1-0:00:00
 build_dir=/lustre/nyx/hades/user/mmamaev/QnAnalysis/build/src
 
 lists_dir=${output_dir}/lists/
@@ -30,4 +30,4 @@ echo lists_dir=$lists_dir
 echo n_runs=$n_runs
 echo job_range=$job_range
 
-sbatch -J QnAnalysis -p $partition -t $time -a $job_range -e ${log_dir}/%A_%a.e -o ${log_dir}/%A_%a.o --export=output_dir=$output_dir,file_list=$file_list,ownroot=$ownroot,lists_dir=$lists_dir,build_dir=$build_dir -- /cvmfs/vae.gsi.de/debian8/containers/debian8-user_container_20210503T0728.sif /lustre/nyx/hades/user/mmamaev/hades_qn_analysis_scripts/auau123/batch_run.sh
+sbatch -J QnAnalysis -p $partition -t $time -a $job_range -e ${log_dir}/%A_%a.e -o ${log_dir}/%A_%a.o --export=output_dir=$output_dir,file_list=$file_list,ownroot=$ownroot,lists_dir=$lists_dir,build_dir=$build_dir -- /cvmfs/vae.gsi.de/debian8/containers/debian8-user_container_20210525T0921.sif /lustre/nyx/hades/user/mmamaev/hades_qn_analysis_scripts/auau123/batch_run.sh
