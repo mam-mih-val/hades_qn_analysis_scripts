@@ -7,7 +7,7 @@ ownroot=/lustre/nyx/hades/user/mmamaev/install/root-6.20.04/bin/thisroot.sh
 
 current_dir=$(pwd)
 partition=long
-time=1-0:00:00
+time=3-0:00:00
 build_dir=/lustre/nyx/hades/user/mmamaev/QnAnalysis/build/src
 
 lists_dir=${output_dir}/lists/
