@@ -19,17 +19,15 @@ echo >> list.txt
 
 source /etc/profile.d/modules.sh
 module use /cvmfs/it.gsi.de/modulefiles/
-module load compiler/gcc/9
+module load compiler/gcc/9.1.0
+module load boost/1.71.0_gcc9.1.0
 
-echo "loading /lustre/nyx/hades/user/mmamaev/install/root-6.18.04/bin/thisroot.sh"
-source /lustre/nyx/hades/user/mmamaev/install/root-6.18.04/bin/thisroot.sh
+echo "loading " $ownroot
+source $ownroot
 
 date $format
 
 /lustre/nyx/hades/user/mmamaev/hades_preprocessing/build/src/pre_process -i list.txt -t hades_analysis_tree -o rapidity.root --output-tree-name hades_analysis_tree_extra -n -1 --protons-efficiency=/lustre/nyx/hades/user/mmamaev/hades_rapidity/efficiency_files/efficiency_protons_agag123.root
-
-echo "loading /lustre/nyx/hades/user/mmamaev/install/root-6.18.04/bin/thisroot.sh"
-source /lustre/nyx/hades/user/mmamaev/install/root-6.18.04/bin/thisroot.sh
 
 current_dir=`pwd`
 find $current_dir -name "*.root" > rapidity.txt

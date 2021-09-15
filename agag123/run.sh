@@ -3,7 +3,7 @@
 file_list=$1
 output_dir=$2
 
-ownroot=/lustre/nyx/hades/user/mmamaev/install/root-6.20.04/bin/thisroot.sh
+ownroot=/lustre/nyx/hades/user/mmamaev/install/root-6.20.04-debian10-cxx17//bin/thisroot.sh
 
 current_dir=$(pwd)
 partition=main
@@ -30,4 +30,4 @@ echo lists_dir=$lists_dir
 echo n_runs=$n_runs
 echo job_range=$job_range
 
-sbatch -J QnAnalysis -p $partition -t $time -a $job_range -e ${log_dir}/%A_%a.e -o ${log_dir}/%A_%a.o --export=output_dir=$output_dir,file_list=$file_list,ownroot=$ownroot,lists_dir=$lists_dir,build_dir=$build_dir -- /cvmfs/vae.gsi.de/debian8/containers/debian8-user_container_20210723T1123.sif /lustre/nyx/hades/user/mmamaev/hades_qn_analysis_scripts/agag123/batch_run.sh
+sbatch -J QnAnalysis -p $partition -t $time -a $job_range -e ${log_dir}/%A_%a.e -o ${log_dir}/%A_%a.o --export=output_dir=$output_dir,file_list=$file_list,ownroot=$ownroot,lists_dir=$lists_dir,build_dir=$build_dir -- /lustre/nyx/hades/user/mmamaev/hades_qn_analysis_scripts/agag123/batch_run.sh
