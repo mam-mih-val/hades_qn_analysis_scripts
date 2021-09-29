@@ -3,12 +3,12 @@
 file_list=$1
 output_dir=$2
 
-ownroot=/lustre/nyx/hades/user/mmamaev/install/root-6.20.04-debian10-cxx17//bin/thisroot.sh
+ownroot=/lustre/nyx/hades/user/mmamaev/install/root-6.20.04-centos7-cxx17/bin/thisroot.sh
 
 current_dir=$(pwd)
 partition=main
 time=8:00:00
-build_dir=/lustre/nyx/hades/user/mmamaev/QnAnalysis/build/src
+build_dir=/lustre/nyx/hades/user/mmamaev/QnAnalysis/build-centos7/src
 
 lists_dir=${output_dir}/lists/
 log_dir=${output_dir}/log/

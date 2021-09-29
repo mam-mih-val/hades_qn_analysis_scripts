@@ -17,10 +17,10 @@ while read line; do
 done < $filelist
 echo >> list.txt
 
-echo "loading  /lustre/nyx/hades/user/mmamaev/install/root-6.18.04-debian10-cxx17/bin/thisroot.sh"
-source /lustre/nyx/hades/user/mmamaev/install/root-6.18.04-debian10-cxx17/bin/thisroot.sh
+echo "loading  /lustre/nyx/hades/user/mmamaev/install/root-6.18.04-centos7-cxx17/bin/thisroot.sh"
+source /lustre/nyx/hades/user/mmamaev/install/root-6.18.04-centos7-cxx17/bin/thisroot.sh
 
-/lustre/nyx/hades/user/mmamaev/hades_preprocessing/build/src/pre_process -i list.txt -t hades_analysis_tree -o rapidity.root --output-tree-name hades_analysis_tree_extra -n -1 --protons-efficiency=/lustre/nyx/hades/user/mmamaev/hades_rapidity/efficiency_files/au123_proton_2021_09_28.root --pi-plus-efficiency=/lustre/nyx/hades/user/mmamaev/hades_rapidity/efficiency_files/au123_pi_pos_2021_09_28.root --pi-minus-efficiency=/lustre/nyx/hades/user/mmamaev/hades_rapidity/efficiency_files/au123_pi_neg_2021_09_28.root
+/lustre/nyx/hades/user/mmamaev/hades_preprocessing/build-centos7/src/pre_process -i list.txt -t hades_analysis_tree -o rapidity.root --output-tree-name hades_analysis_tree_extra -n -1 --protons-efficiency=/lustre/nyx/hades/user/mmamaev/hades_rapidity/efficiency_files/au123_proton_2021_09_28.root --pi-plus-efficiency=/lustre/nyx/hades/user/mmamaev/hades_rapidity/efficiency_files/au123_pi_pos_2021_09_28.root --pi-minus-efficiency=/lustre/nyx/hades/user/mmamaev/hades_rapidity/efficiency_files/au123_pi_neg_2021_09_28.root
 
 current_dir=`pwd`
 find $current_dir -name "*.root" > rapidity.txt
