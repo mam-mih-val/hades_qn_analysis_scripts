@@ -3,12 +3,12 @@
 file_list=$1
 output_dir=$2
 
-ownroot=/lustre/nyx/hades/user/mmamaev/install/root-6.20.04/bin/thisroot.sh
+ownroot=/lustre/nyx/hades/user/mmamaev/install/root-6.20.04-centos7-cxx17/bin/thisroot.sh
 
 current_dir=$(pwd)
 partition=main
 time=8:00:00
-build_dir=/lustre/nyx/hades/user/mmamaev/QnAnalysis/build/src
+build_dir=/lustre/nyx/hades/user/mmamaev/QnAnalysis/build-centos7/src
 
 lists_dir=${output_dir}/lists/
 log_dir=${output_dir}/log/
@@ -30,4 +30,4 @@ echo lists_dir=$lists_dir
 echo n_runs=$n_runs
 echo job_range=$job_range
 
-sbatch -J QnAnalysis -p $partition -t $time -a $job_range -e ${log_dir}/%A_%a.e -o ${log_dir}/%A_%a.o --export=output_dir=$output_dir,file_list=$file_list,ownroot=$ownroot,lists_dir=$lists_dir,build_dir=$build_dir -- /cvmfs/vae.gsi.de/debian8/containers/debian8-user_container_20210806T0945.sif /lustre/nyx/hades/user/mmamaev/hades_qn_analysis_scripts/mc-auau123/batch_run.sh
+sbatch -J QnAnalysis -p $partition -t $time -a $job_range -e ${log_dir}/%A_%a.e -o ${log_dir}/%A_%a.o --export=output_dir=$output_dir,file_list=$file_list,ownroot=$ownroot,lists_dir=$lists_dir,build_dir=$build_dir -- /cvmfs/vae.gsi.de/centos7/containers/centos7-user_container_20210929T1107.sif /cvmfs/vae.gsi.de/debian8/containers/debian8-user_container_20210806T0945.sif /lustre/nyx/hades/user/mmamaev/hades_qn_analysis_scripts/mc-auau123/batch_run.sh
