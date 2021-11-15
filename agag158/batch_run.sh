@@ -44,10 +44,13 @@ $build_dir/QnAnalysisCorrect/QnAnalysisCorrect -i list.txt rapidity.txt -t hades
 
 date $format
 
-$build_dir/QnAnalysisCorrelate/QnAnalysisCorrelate --configuration-file /lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/correlation-agag-158.yml --configuration-name _tasks --input-file correction_out.root --input-tree=tree --output-file correlation_out.root
+#$build_dir/QnAnalysisCorrelate/QnAnalysisCorrelate --configuration-file /lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/correlation-agag-158.yml --configuration-name _tasks --input-file correction_out.root --input-tree=tree --output-file correlation_out.root
+
+$build_dir/QnAnalysisCorrelate/QnAnalysisCorrelate --configuration-file /lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/correlation-auau-123-proton.yml --configuration-name _tasks --input-file correction_out.root --input-tree=tree --output-file correlation_proton.root
+
 
 date $format
 
-rm rapidity.root rapidity.txt correction_in.root
+#rm rapidity.root rapidity.txt correction_in.root
 
 echo JOB FINISHED!
