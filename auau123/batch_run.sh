@@ -44,9 +44,9 @@ $build_dir/QnAnalysisCorrect/QnAnalysisCorrect -i list.txt rapidity.txt -t hades
 
 date $format
 
-$build_dir/QnAnalysisCorrelate/QnAnalysisCorrelate --configuration-file /lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/correlation-auau-123.yml --configuration-name _tasks --input-file correction_out.root --input-tree=tree --output-file correlation_out.root
+#$build_dir/QnAnalysisCorrelate/QnAnalysisCorrelate --configuration-file /lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/correlation-auau-123.yml --configuration-name _tasks --input-file correction_out.root --input-tree=tree --output-file correlation_out.root
 
-#$build_dir/QnAnalysisCorrelate/QnAnalysisCorrelate --configuration-file /lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/correlation-auau-123-proton.yml --configuration-name _tasks --input-file correction_out.root --input-tree=tree --output-file correlation_proton.root
+$build_dir/QnAnalysisCorrelate/QnAnalysisCorrelate --configuration-file /lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/correlation-auau-123-proton.yml --configuration-name _tasks --input-file correction_out.root --input-tree=tree --output-file correlation_proton.root
 
 #$build_dir/QnAnalysisCorrelate/QnAnalysisCorrelate --configuration-file /lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/correlation-auau-123-pi-pos.yml --configuration-name _tasks --input-file correction_out.root --input-tree=tree --output-file correlation_pi_pos.root
 
