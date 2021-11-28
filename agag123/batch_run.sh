@@ -20,7 +20,7 @@ echo >> list.txt
 echo "loading  /lustre/nyx/hades/user/mmamaev/install/root-6.18.04-centos7-cxx17/bin/thisroot.sh"
 source /lustre/nyx/hades/user/mmamaev/install/root-6.18.04-centos7-cxx17/bin/thisroot.sh
 
-/lustre/nyx/hades/user/mmamaev/hades_preprocessing/build-centos7/src/pre_process -i list.txt -t hades_analysis_tree -o rapidity.root --output-tree-name hades_analysis_tree_extra -n -1 --centrality-file=/lustre/hebe/hades/user/bkardan/param/centrality_epcorr_mar19_ag123ag_2500A_glauber_gen4_2020_10_pass3.root --protons-efficiency=/lustre/nyx/hades/user/mmamaev/hades_preprocessing/efficiency_files/ag123_proton_2021_09_28.root --pi-plus-efficiency=/lustre/nyx/hades/user/mmamaev/hades_preprocessing/efficiency_files/ag123_pi_pos_2021_09_28.root --pi-minus-efficiency=/lustre/nyx/hades/user/mmamaev/hades_preprocessing/efficiency_files/ag123_pi_neg_2021_09_28.root
+/lustre/nyx/hades/user/mmamaev/hades_preprocessing/build-centos7/src/pre_process -i list.txt -t hades_analysis_tree -o rapidity.root --output-tree-name hades_analysis_tree_extra -n -1 --centrality-file=/lustre/hebe/hades/user/bkardan/param/centrality_epcorr_mar19_ag123ag_2500A_glauber_gen4_2020_10_pass3.root --protons-efficiency=/lustre/nyx/hades/user/mmamaev/hades_preprocessing/efficiency_files/ag123_new_centrality_2212_2021_11_28.root --pi-plus-efficiency=/lustre/nyx/hades/user/mmamaev/hades_preprocessing/efficiency_files/ag123_pi_pos_2021_09_28.root --pi-minus-efficiency=/lustre/nyx/hades/user/mmamaev/hades_preprocessing/efficiency_files/ag123_pi_neg_2021_09_28.root
 
 current_dir=`pwd`
 find $current_dir -name "*.root" > rapidity.txt
