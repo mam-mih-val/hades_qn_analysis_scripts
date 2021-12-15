@@ -46,7 +46,7 @@ date $format
 
 #$build_dir/QnAnalysisCorrect/QnAnalysisCorrect -i list.txt wall.txt reco.txt -t hades_analysis_tree reconstructed_wall extra_reco --yaml-config-file=/lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/mc-correction-auau-123-true.yml --yaml-config-name=hades_analysis -n -1 --cuts-macro Hades/AuAu1.23.C
 
-$build_dir/QnAnalysisCorrect/QnAnalysisCorrect -i list.txt reco.txt -t hades_analysis_tree extra_reco --yaml-config-file=/lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/mc-correction-auau-123.yml --yaml-config-name=hades_analysis -n -1 --cuts-macro Hades/AuAu1.23.C
+$build_dir/QnAnalysisCorrect/QnAnalysisCorrect -i list.txt reco.txt -t hades_analysis_tree extra_reco --yaml-config-file=/lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/mc-correction-auau-123-occupancy.yml --yaml-config-name=hades_analysis -n -1 --cuts-macro Hades/AuAu1.23.C
 #mv correction_out.root correction_in.root
 #
 #date $format
@@ -60,7 +60,7 @@ $build_dir/QnAnalysisCorrect/QnAnalysisCorrect -i list.txt reco.txt -t hades_ana
 #
 #date $format
 
-$build_dir/QnAnalysisCorrelate/QnAnalysisCorrelate --configuration-file /lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/mc-correlation.yml --configuration-name _tasks --input-file correction_out.root --input-tree=tree --output-file correlation_out.root
+$build_dir/QnAnalysisCorrelate/QnAnalysisCorrelate --configuration-file /lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/mc-correlation-auau-123-occupancy.yml --configuration-name _tasks --input-file correction_out.root --input-tree=tree --output-file correlation_out.root
 
 #$build_dir/QnAnalysisCorrelate/QnAnalysisCorrelate --configuration-file /lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/mc-correlation-rec-pi-pos.yml --configuration-name _tasks --input-file correction_out.root --input-tree=tree --output-file correlation_rec_pi_pos.root
 #$build_dir/QnAnalysisCorrelate/QnAnalysisCorrelate --configuration-file /lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/mc-correlation-rec-pi-neg.yml --configuration-name _tasks --input-file correction_out.root --input-tree=tree --output-file correlation_rec_pi_neg.root
