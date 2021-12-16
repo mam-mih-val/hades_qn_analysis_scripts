@@ -1,7 +1,8 @@
 #!/bin/bash
 
-file_list=$1
-output_dir=$2
+n_files=$1
+file_list=$2
+output_dir=$3
 
 ownroot=/lustre/nyx/hades/user/mmamaev/install/root-6.20.04-centos7-cxx17/bin/thisroot.sh
 
@@ -17,7 +18,7 @@ mkdir -p $output_dir
 mkdir -p $log_dir
 mkdir -p $lists_dir
 
-split -l 1 -d -a 3 --additional-suffix=.list "$file_list" $lists_dir
+split -l $n_files -d -a 3 --additional-suffix=.list "$file_list" $lists_dir
 
 n_runs=$(ls $lists_dir/*.list | wc -l)
 
