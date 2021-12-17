@@ -7,8 +7,8 @@ output_dir=$3
 ownroot=/lustre/nyx/hades/user/mmamaev/install/root-6.20.04-centos7-cxx17/bin/thisroot.sh
 
 current_dir=$(pwd)
-partition=main
-time=8:00:00
+partition=debug
+time=0:20:00
 build_dir=/lustre/nyx/hades/user/mmamaev/QnAnalysis/build-centos7/src
 
 lists_dir=${output_dir}/lists/
