@@ -28,10 +28,10 @@ date $format
 $build_dir/QnAnalysisCorrect/QnAnalysisCorrect -i $filelist rapidity.txt -t hades_analysis_tree hades_analysis_tree_extra --yaml-config-file=/lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/correction-auau-123.yml --yaml-config-name=hades_analysis -n -1 --cuts-macro Hades/AuAu1.23.C --event-cuts hades/auau/1.23/event_cuts/standard/pt3
 mv correction_out.root correction_in.root
 
-date $format
+#date $format
 
-$build_dir/QnAnalysisCorrect/QnAnalysisCorrect -i $filelist rapidity.txt -t hades_analysis_tree hades_analysis_tree_extra --yaml-config-file=/lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/correction-auau-123.yml --yaml-config-name=hades_analysis -n -1 --cuts-macro Hades/AuAu1.23.C --event-cuts hades/auau/1.23/event_cuts/standard/pt3
-mv correction_out.root correction_in.root
+#$build_dir/QnAnalysisCorrect/QnAnalysisCorrect -i $filelist rapidity.txt -t hades_analysis_tree hades_analysis_tree_extra --yaml-config-file=/lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/correction-auau-123.yml --yaml-config-name=hades_analysis -n -1 --cuts-macro Hades/AuAu1.23.C --event-cuts hades/auau/1.23/event_cuts/standard/pt3
+#mv correction_out.root correction_in.root
 
 date $format
 
