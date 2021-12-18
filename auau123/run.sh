@@ -46,6 +46,4 @@ source $ownroot
 
 hadd -j -f $output_dir/correlation_all.root $output_dir/*/correlation_out.root >& $log_dir/log_merge_$STEP.txt
 
-rm $output_dir/*/correlation_out.root
-
 echo JOBS HAVE BEEN COMPLETED!
