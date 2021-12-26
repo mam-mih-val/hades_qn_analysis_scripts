@@ -31,4 +31,19 @@ echo lists_dir=$lists_dir
 echo n_runs=$n_runs
 echo job_range=$job_range
 
-sbatch -J QnAnalysis -p $partition -t $time -a $job_range -e ${log_dir}/%A_%a.e -o ${log_dir}/%A_%a.o --export=output_dir=$output_dir,file_list=$file_list,ownroot=$ownroot,lists_dir=$lists_dir,build_dir=$build_dir -- /lustre/nyx/hades/user/mmamaev/hades_qn_analysis_scripts/mc-auau123/batch_run.sh
+sbatch --wait \
+        -J QnAnalysis \
+        -p $partition \
+        -t $time \
+        -a $job_range \
+        -e ${log_dir}/%A_%a.e \
+        -o ${log_dir}/%A_%a.o \
+        --export=output_dir=$output_dir,file_list=$file_list,ownroot=$ownroot,lists_dir=$lists_dir,build_dir=$build_dir \
+        -- /lustre/nyx/hades/user/mmamaev/hades_qn_analysis_scripts/mc-auau123/batch_run.sh
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/lustre/nyx/hades/user/mmamaev/install/QnTools/lib
+source $ownroot
+
+hadd -j -f $output_dir/correlation_all.root $output_dir/*/correlation_out.root >& $log_dir/log_merge_$STEP.txt
+
+echo JOBS HAVE BEEN COMPLETED!
