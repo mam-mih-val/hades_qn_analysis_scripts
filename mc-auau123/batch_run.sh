@@ -30,7 +30,15 @@ echo
 
 date $format
 
-/lustre/nyx/hades/user/mmamaev/hades_preprocessing/build-centos7/src/pre_process -i list.txt -t hades_analysis_tree -o reco.root --output-tree-name extra_reco -n -1 --protons-efficiency=/lustre/nyx/hades/user/mmamaev/hades_rapidity/efficiency_files/efficiency_protons.root --pi-plus-efficiency=/lustre/nyx/hades/user/mmamaev/hades_rapidity/efficiency_files/efficiency_pi_plus.root --pi-minus-efficiency=/lustre/nyx/hades/user/mmamaev/hades_rapidity/efficiency_files/efficiency_pi_minus.root
+/lustre/nyx/hades/user/mmamaev/hades_preprocessing/build-centos7/src/pre_process -i list.txt \
+                                                                                -t hades_analysis_tree \
+                                                                                -o reco.root \
+                                                                                --output-tree-name extra_reco \
+                                                                                -n -1 \
+                                                                                --protons-efficiency=/lustre/nyx/hades/user/mmamaev/hades_rapidity/efficiency_files/efficiency_protons.root \
+                                                                                --pi-plus-efficiency=/lustre/nyx/hades/user/mmamaev/hades_rapidity/efficiency_files/efficiency_pi_plus.root \
+                                                                                --pi-minus-efficiency=/lustre/nyx/hades/user/mmamaev/hades_rapidity/efficiency_files/efficiency_pi_minus.root \
+                                                                                --efficiency-delta-phi=/lustre/nyx/hades/user/mmamaev/hades_rapidity/efficiency_files/delta_phi_au123_urqmd_2212_2022_01_20.root
 
 echo "loading " $ownroot
 source $ownroot
@@ -46,7 +54,12 @@ date $format
 
 #$build_dir/QnAnalysisCorrect/QnAnalysisCorrect -i list.txt wall.txt reco.txt -t hades_analysis_tree reconstructed_wall extra_reco --yaml-config-file=/lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/mc-correction-auau-123-true.yml --yaml-config-name=hades_analysis -n -1 --cuts-macro Hades/AuAu1.23.C
 
-$build_dir/QnAnalysisCorrect/QnAnalysisCorrect -i list.txt reco.txt -t hades_analysis_tree extra_reco --yaml-config-file=/lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/mc-correction-auau-123-occupancy.yml --yaml-config-name=hades_analysis -n -1 --cuts-macro Hades/AuAu1.23.C
+$build_dir/QnAnalysisCorrect/QnAnalysisCorrect -i list.txt reco.txt \
+                                              -t hades_analysis_tree extra_reco \
+                                              --yaml-config-file=/lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/mc-correction-auau-123-occupancy.yml \
+                                              --yaml-config-name=hades_analysis \
+                                              -n -1 \
+                                              --cuts-macro Hades/AuAu1.23.C
 #mv correction_out.root correction_in.root
 #
 #date $format
@@ -60,7 +73,11 @@ $build_dir/QnAnalysisCorrect/QnAnalysisCorrect -i list.txt reco.txt -t hades_ana
 #
 #date $format
 
-$build_dir/QnAnalysisCorrelate/QnAnalysisCorrelate --configuration-file /lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/mc-correlation-auau-123-occupancy.yml --configuration-name _tasks --input-file correction_out.root --input-tree=tree --output-file correlation_out.root
+$build_dir/QnAnalysisCorrelate/QnAnalysisCorrelate --configuration-file /lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/mc-correlation-auau-123-occupancy.yml \
+                                                  --configuration-name _tasks \
+                                                  --input-file correction_out.root \
+                                                  --input-tree=tree \
+                                                  --output-file correlation_out.root
 
 #$build_dir/QnAnalysisCorrelate/QnAnalysisCorrelate --configuration-file /lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/mc-correlation-rec-pi-pos.yml --configuration-name _tasks --input-file correction_out.root --input-tree=tree --output-file correlation_rec_pi_pos.root
 #$build_dir/QnAnalysisCorrelate/QnAnalysisCorrelate --configuration-file /lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/mc-correlation-rec-pi-neg.yml --configuration-name _tasks --input-file correction_out.root --input-tree=tree --output-file correlation_rec_pi_neg.root
