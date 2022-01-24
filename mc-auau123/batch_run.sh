@@ -38,7 +38,7 @@ date $format
                                                                                 --protons-efficiency=/lustre/nyx/hades/user/mmamaev/hades_rapidity/efficiency_files/efficiency_protons.root \
                                                                                 --pi-plus-efficiency=/lustre/nyx/hades/user/mmamaev/hades_rapidity/efficiency_files/efficiency_pi_plus.root \
                                                                                 --pi-minus-efficiency=/lustre/nyx/hades/user/mmamaev/hades_rapidity/efficiency_files/efficiency_pi_minus.root \
-                                                                                --efficiency-delta-phi=/lustre/nyx/hades/user/mmamaev/hades_rapidity/efficiency_files/delta_phi_au123_urqmd_2212_2022_01_20.root
+                                                                                --efficiency-delta-phi=/lustre/nyx/hades/user/mmamaev/hades_preprocessing/efficiency_files/delta_phi_au123_urqmd_2212_2022_01_20.root
 
 echo "loading " $ownroot
 source $ownroot
