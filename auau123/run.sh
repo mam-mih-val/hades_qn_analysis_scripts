@@ -24,12 +24,12 @@ n_runs=$(ls $lists_dir/*.list | wc -l)
 
 job_range=1-$n_runs
 
-echo file list=$file_list
-echo output_dir=$output_dir
-echo log_dir=$log_dir
-echo lists_dir=$lists_dir
-echo n_runs=$n_runs
-echo job_range=$job_range
+echo file list: $file_list
+echo output_dir: $output_dir
+echo log_dir: $log_dir
+echo lists_dir: $lists_dir
+echo n_runs: $n_runs
+echo job_range: $job_range
 
 sbatch --wait \
       -J QnAnalysis \
