@@ -22,14 +22,14 @@ $qn_tools/QnAnalysisCorrect/QnAnalysisCorrect -i $filelist \
                                               -t hades_analysis_tree \
                                               --yaml-config-file=/lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/correction-auau-123-plains.yml \
                                               --yaml-config-name=hades_analysis \
-                                              -n 1000 \
+                                              -n 100000 \
                                               --cuts-macro Hades/AuAu1.23.C
 
 $preprocessing/pre_process -i $filelist \
                           -t hades_analysis_tree \
                           -o rapidity.root \
                           --output-tree-name hades_analysis_tree_extra \
-                          -n 1000 \
+                          -n 100000 \
                           --protons-efficiency=/lustre/nyx/hades/user/mmamaev/hades_preprocessing/efficiency_files/au123_proton_2021_09_28.root \
                           --pi-plus-efficiency=/lustre/nyx/hades/user/mmamaev/hades_preprocessing/efficiency_files/au123_pi_pos_2021_09_28.root \
                           --pi-minus-efficiency=/lustre/nyx/hades/user/mmamaev/hades_preprocessing/efficiency_files/au123_pi_neg_2021_09_28.root \
@@ -47,7 +47,7 @@ $qn_tools/QnAnalysisCorrect/QnAnalysisCorrect -i $filelist rapidity.txt \
                                               -t hades_analysis_tree hades_analysis_tree_extra \
                                               --yaml-config-file=/lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/correction-auau-123-occupancy.yml \
                                               --yaml-config-name=hades_analysis \
-                                              -n 1000 \
+                                              -n 100000 \
                                               --cuts-macro Hades/AuAu1.23.C \
                                               --event-cuts hades/auau/1.23/event_cuts/standard/pt3
 #mv correction_out.root correction_in.root
@@ -58,7 +58,7 @@ $qn_tools/QnAnalysisCorrect/QnAnalysisCorrect -i $filelist rapidity.txt \
 #                                              -t hades_analysis_tree hades_analysis_tree_extra \
 #                                              --yaml-config-file=/lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/correction-auau-123-occupancy.yml \
 #                                              --yaml-config-name=hades_analysis \
-#                                              -n 1000 \
+#                                              -n 100000 \
 #                                              --cuts-macro Hades/AuAu1.23.C \
 #                                              --event-cuts hades/auau/1.23/event_cuts/standard/pt3
 
