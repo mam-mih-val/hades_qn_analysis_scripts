@@ -24,12 +24,15 @@ n_runs=$(ls $lists_dir/*.list | wc -l)
 
 job_range=1-$n_runs
 
-echo file list=$file_list
-echo output_dir=$output_dir
-echo log_dir=$log_dir
-echo lists_dir=$lists_dir
-echo n_runs=$n_runs
-echo job_range=$job_range
+out_file_name=`basename $output_dir`.root
+
+echo file name: $out_file_name
+echo file list: $file_list
+echo output_dir: $output_dir
+echo log_dir: $log_dir
+echo lists_dir: $lists_dir
+echo n_runs: $n_runs
+echo job_range: $job_range
 
 sbatch --wait \
         -J QnAnalysis \
@@ -46,7 +49,6 @@ source $ownroot
 
 hadd -j -f $output_dir/correlation_all.root $output_dir/*/correlation_out.root >& $log_dir/log_merge_$STEP.txt
 
-out_file_name=`basename $output_dir`.root
 cp $output_dir/correlation_all.root ~/Correlations/$out_file_name
 
 echo JOBS HAVE BEEN COMPLETED!

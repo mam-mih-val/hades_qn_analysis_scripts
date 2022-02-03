@@ -23,8 +23,8 @@ while read line; do
 done < $filelist
 echo >> wall.txt
 
-echo "loading  /lustre/nyx/hades/user/mmamaev/install/root-6.18.04-centos7-cxx17/bin/thisroot.sh"
-source /lustre/nyx/hades/user/mmamaev/install/root-6.18.04-centos7-cxx17/bin/thisroot.sh
+echo "loading " $ownroot
+source $ownroot
 
 echo
 
@@ -37,11 +37,7 @@ date $format
                                                                                 -n -1 \
                                                                                 --protons-efficiency=/lustre/nyx/hades/user/mmamaev/hades_rapidity/efficiency_files/efficiency_protons.root \
                                                                                 --pi-plus-efficiency=/lustre/nyx/hades/user/mmamaev/hades_rapidity/efficiency_files/efficiency_pi_plus.root \
-                                                                                --pi-minus-efficiency=/lustre/nyx/hades/user/mmamaev/hades_rapidity/efficiency_files/efficiency_pi_minus.root \
-                                                                                --efficiency-delta-phi=/lustre/nyx/hades/user/mmamaev/hades_preprocessing/efficiency_files/delta_phi_au123_urqmd_2212_2022_01_20.root
-
-echo "loading " $ownroot
-source $ownroot
+                                                                                --pi-minus-efficiency=/lustre/nyx/hades/user/mmamaev/hades_rapidity/efficiency_files/efficiency_pi_minus.root
 
 current_dir=`pwd`
 find $current_dir -name "reco.root" > reco.txt
