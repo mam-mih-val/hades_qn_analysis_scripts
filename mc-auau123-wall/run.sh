@@ -42,7 +42,7 @@ sbatch --wait \
         -e ${log_dir}/%A_%a.e \
         -o ${log_dir}/%A_%a.o \
         --export=output_dir=$output_dir,file_list=$file_list,ownroot=$ownroot,lists_dir=$lists_dir,build_dir=$build_dir \
-        -- /lustre/nyx/hades/user/mmamaev/hades_qn_analysis_scripts/mc-auau123/batch_run.sh
+        -- /lustre/nyx/hades/user/mmamaev/hades_qn_analysis_scripts/mc-auau123-wall/batch_run.sh
 
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/lustre/nyx/hades/user/mmamaev/install/QnTools/lib
 source $ownroot
