@@ -41,13 +41,20 @@ sbatch --wait \
       --export=output_dir=$output_dir,file_list=$file_list,ownroot=$ownroot,lists_dir=$lists_dir,build_dir=$build_dir \
       -- /lustre/nyx/hades/user/mmamaev/hades_qn_analysis_scripts/auau123/batch_run.sh
 
+echo JOBS HAVE BEEN COMPLETED!
+
+echo Merging output files...
+
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/lustre/nyx/hades/user/mmamaev/install/QnTools/lib
 source $ownroot
 
-hadd -j -f $output_dir/correlation_all.root $output_dir/*/correlation_out.root >& $log_dir/log_merge_$STEP.txt
+hadd -j -f $output_dir/correlation_all.root $output_dir/*/correlation_out.root >& $log_dir/log_merge.txt
 
 out_file_name=`basename $output_dir`.root
 
 cp $output_dir/correlation_all.root ~/Correlations/$out_file_name
 
-echo JOBS HAVE BEEN COMPLETED!
+echo Merging finished. Merging log is availible in
+echo $log_dir/log_merge.txt
+echo
+echo output file name: $output_dir
