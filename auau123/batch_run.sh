@@ -35,7 +35,7 @@ $preprocessing/pre_process -i $filelist \
                           --pi-minus-efficiency=/lustre/nyx/hades/user/mmamaev/hades_preprocessing/efficiency_files/au123_pi_neg_2021_09_28.root \
                           --q-vector-file=correction_out.root \
                           --q-vector-name=Wall_PLAIN \
-                          --efficiency-delta-phi=/lustre/nyx/hades/user/mmamaev/hades_preprocessing/efficiency_files/delta_phi_au123_2212_2022_01_27.root
+                          --efficiency-delta-phi=/lustre/nyx/hades/user/mmamaev/hades_preprocessing/efficiency_files/delta_phi_au123_2212_2022_02_07.root
 rm correction_out.root
 
 current_dir=`pwd`
