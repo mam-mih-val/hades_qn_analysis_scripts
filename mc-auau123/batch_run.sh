@@ -53,7 +53,7 @@ date $format
 
 $build_dir/QnAnalysisCorrect/QnAnalysisCorrect -i list.txt reco.txt \
                                               -t hades_analysis_tree extra_reco \
-                                              --yaml-config-file=/lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/mc-correction-auau-123-occupancy.yml \
+                                              --yaml-config-file=/lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/mc-correction-auau-123-y-pT-theta.yml \
                                               --yaml-config-name=hades_analysis \
                                               -n -1 \
                                               --cuts-macro Hades/AuAu1.23.C
@@ -70,7 +70,7 @@ $build_dir/QnAnalysisCorrect/QnAnalysisCorrect -i list.txt reco.txt \
 #
 #date $format
 
-$build_dir/QnAnalysisCorrelate/QnAnalysisCorrelate --configuration-file /lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/mc-correlation-auau-123-occupancy.yml \
+$build_dir/QnAnalysisCorrelate/QnAnalysisCorrelate --configuration-file /lustre/nyx/hades/user/mmamaev/QnAnalysis/setups/hades/mc-correlation-auau-123-y-pT-theta.yml \
                                                   --configuration-name _tasks \
                                                   --input-file correction_out.root \
                                                   --input-tree=tree \
